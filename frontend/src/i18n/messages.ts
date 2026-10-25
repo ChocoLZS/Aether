@@ -2955,7 +2955,7 @@ const legacyPhraseEnglishMessages: Array<[string, string]> = [
   ['敏感请求头', 'Sensitive request headers'],
   ['逗号分隔，这些请求头会被脱敏处理', 'Comma-separated request headers that will be redacted'],
   ['压缩审计快照中的 Base64', 'Compact Base64 payloads in audit snapshots'],
-  ['将请求和响应审计快照中所有 Base64 字符串及任意 MIME 的 Base64 data URL 替换为大小占位符；encrypted_content 和 body_bytes_b64 也会精简。只影响审计记录，不影响请求转发；被精简内容无法恢复或完整重放', 'Replace all Base64 strings and Base64 data URLs of any MIME type in request and response audit snapshots with size placeholders. encrypted_content and body_bytes_b64 fields are also compacted. This only changes audit records, does not affect request forwarding, and compacted content cannot be restored or fully replayed.'],
+  ['将请求和响应审计快照中解码后达到 4 KiB 的 Base64 字段及任意 MIME 的 Base64 data URL 替换为保留类型和大小的占位符；encrypted_content 按字符串字节数使用相同阈值，body_bytes_b64 按解码大小处理。只影响审计记录，不影响请求转发；被精简内容无法恢复或完整重放', 'Replace Base64 fields and Base64 data URLs of any MIME type in request and response audit snapshots when their decoded size reaches 4 KiB, preserving the media type and original size in placeholders. The same threshold applies to encrypted_content by string byte length and body_bytes_b64 by decoded size. This only changes audit records, does not affect request forwarding, and compacted content cannot be restored or fully replayed.'],
   ['Body 大小上限（KB）', 'Body size limit (KB)'],
   ['每个请求/响应 Body 独立限制，0 表示不限制', 'Limit each request/response body independently; 0 means unlimited'],
   ['0 表示默认不限制；未单独配置的用户和独立 Key 会跟随这里', '0 means no default limit. Users and standalone keys without separate configuration follow this setting.'],
