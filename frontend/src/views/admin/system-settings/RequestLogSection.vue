@@ -78,10 +78,10 @@
             for="compact-base64-images"
             class="text-sm font-medium cursor-pointer"
           >
-            压缩审计快照中的 Base64
+            压缩 Base64
           </Label>
           <p class="mt-1 text-xs text-muted-foreground">
-            将请求和响应审计快照中解码后达到 4 KiB 的 Base64 字段及任意 MIME 的 Base64 data URL 替换为保留类型和大小的占位符；encrypted_content 按字符串字节数使用相同阈值，body_bytes_b64 按解码大小处理。只影响审计记录，不影响请求转发；被精简内容无法恢复或完整重放
+            将较大的 Base64 内容替换为保留类型和大小的占位符，仅影响审计记录，不影响请求转发。
           </p>
         </div>
       </div>
